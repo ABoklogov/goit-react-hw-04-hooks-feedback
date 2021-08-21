@@ -8,19 +8,19 @@ const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const arrState = ['good', 'neutral', 'bad'];
+  const arrState = Object.keys({ good, neutral, bad });
 
   const addReview = review => {
     switch (review) {
-      case 'good':
+      case arrState[0]:
         setGood(prevGood => prevGood + 1);
         break;
 
-      case 'neutral':
+      case arrState[1]:
         setNeutral(prevNeutral => prevNeutral + 1);
         break;
 
-      case 'bad':
+      case arrState[2]:
         setBad(prevBad => prevBad + 1);
         break;
 
